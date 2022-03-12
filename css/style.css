@@ -1,9 +1,55 @@
 :root {
   box-sizing: border-box;
+
+  /* Colors */
+  --brand: #1F2937;
+  --brand-light: #3882F6;
+  --shade: #E5E7EB;
+  --shade-light: #F9FAF8;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+button {
+  background-color: var(--brand-light);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "roboto"
+}
+
+header,
+.hero,
+footer {
+  display: flex;
+  align-items: center;
+  background-color: var(--brand);
+  color: var(--shade);
+}
+
+header {
+  justify-content: space-between;
+}
+
+header nav h1 {
+  color: var(--shade-light);
+}
+
+.container {
+  flex: 1;
+}
+
+.hero h2 {
+  color: var(--shade-light);
+}
+
+footer {
+  justify-content: center;
 }
