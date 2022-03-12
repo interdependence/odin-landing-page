@@ -16,13 +16,18 @@
 
 button {
   background-color: var(--brand-light);
+  color: var(--shade-light);
+  padding: 0.25rem 0.75rem;
+  border-style: none;
+  border-radius: 0.5rem;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  margin: 0;
   min-height: 100vh;
-  font-family: "roboto"
+  font-family: "roboto", sans-serif;
 }
 
 header,
@@ -32,14 +37,16 @@ footer {
   align-items: center;
   background-color: var(--brand);
   color: var(--shade);
+  font-size: 18px;
 }
 
 header {
   justify-content: space-between;
 }
 
-header nav h1 {
+header h1 {
   color: var(--shade-light);
+  font-size: 24px;
 }
 
 .container {
@@ -48,6 +55,36 @@ header nav h1 {
 
 .hero h2 {
   color: var(--shade-light);
+  font-size: 48px;
+}
+
+.gallery img {
+  border: 0.15rem solid var(--brand-light);
+  border-radius: 0.5rem;
+}
+
+.quote {
+  background-color: var(--shade);
+}
+
+.quote p {
+  color: var(--brand-dark);
+  font-size: 36px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.quote .quote-author {
+  font-weight: bold;
+}
+
+.call-to-action {
+  background-color: var(--brand-light);
+  color: var(--shade-light);
+}
+
+.call-to-action button {
+  border: 0.15rem solid var(--shade-light);
 }
 
 footer {
