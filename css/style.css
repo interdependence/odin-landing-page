@@ -15,30 +15,40 @@
   box-sizing: inherit;
 }
 
-.container,
-.container-fluid {
-  padding: 0.5rem;
-}
-
 .container {
   max-width: 60rem;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
-.container-fluid {
-  max-width: 100%;
+@media screen and (max-width: 64rem) {
+  .container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 0;
 }
 
 button {
+  padding: 0.25rem 0.75rem;
   background-color: var(--brand-light);
   color: var(--shade-light);
-  padding: 0.25rem 0.75rem;
   border-style: none;
   border-radius: 0.5rem;
 }
 
 img {
+  display: flex;
   max-width: 100%;
+  border-radius: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  color: white;
 }
 
 body {
@@ -50,8 +60,16 @@ body {
 
 header,
 .hero,
+.gallery,
+.quote,
+.call-to-action,
 footer {
-  /* min-height: 5rem; */
+  padding: 1rem;
+}
+
+header,
+.hero,
+footer {
   background-color: var(--brand);
   color: var(--shade);
   font-size: 18px;
@@ -59,8 +77,9 @@ footer {
 
 header .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
 header h1 {
@@ -68,14 +87,51 @@ header h1 {
   font-size: 24px;
 }
 
+header a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--shade);
+}
+
+.hero .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
 .hero h2 {
   color: var(--shade-light);
   font-size: 48px;
 }
 
+.hero section {
+  flex: 1;
+}
+
+.hero img {
+  flex: 1;
+  border: 0.15rem solid var(--shade);
+}
+
+.gallery {
+  text-align: center;
+}
+
+.gallery-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.gallery-item {
+  flex: 0 0 12rem;
+}
+
 .gallery img {
   border: 0.15rem solid var(--brand-light);
   border-radius: 0.5rem;
+  margin: 0 auto;
 }
 
 .quote {
@@ -83,18 +139,42 @@ header h1 {
   color: var(--brand-dark);
 }
 
-.quote p {
+.quote .container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (max-width: 64rem) {
+  .quote .container {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+
+.quote .quote-body {
   font-size: 36px;
   font-weight: lighter;
   font-style: italic;
 }
 .quote .quote-author {
+  text-align: end;
   font-weight: bold;
 }
 
 .call-to-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
   background-color: var(--brand-light);
   color: var(--shade-light);
+  border-radius: 0.5rem;
+}
+
+.call-to-action section {
+  flex: 1;
 }
 
 .call-to-action button {
@@ -102,7 +182,5 @@ header h1 {
 }
 
 footer .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
