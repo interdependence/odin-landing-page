@@ -1,3 +1,4 @@
+/* -- General styles -- */
 :root {
   box-sizing: border-box;
   font-family: "roboto", sans-serif;
@@ -15,6 +16,60 @@
   box-sizing: inherit;
 }
 
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  background-color: var(--shade);
+  color: black;
+}
+
+button {
+  padding: 0.25rem 0.75rem;
+  border-style: none;
+  border-radius: 0.5rem;
+  background-color: var(--brand-light);
+  color: var(--shade-light);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a:hover {
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+header,
+footer,
+article {
+  padding: 1rem;
+}
+
+header,
+.hero,
+footer {
+  background-color: var(--brand);
+  color: var(--shade);
+  font-size: 18px;
+}
+
+/* -- Utility -- */
 .container {
   max-width: 60rem;
   margin: 1rem auto;
@@ -27,59 +82,12 @@
   }
 }
 
-h2, h3, h4, h5, h6 {
-  margin-top: 0;
-}
 
-button {
-  padding: 0.25rem 0.75rem;
-  background-color: var(--brand-light);
-  color: var(--shade-light);
-  border-style: none;
-  border-radius: 0.5rem;
-}
-
-img {
-  display: flex;
-  max-width: 100%;
-  border-radius: 0.5rem;
-  justify-content: center;
-  align-items: center;
-}
-
-a:hover {
-  color: white;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  min-height: 100vh;
-}
-
-header,
-.hero,
-.gallery,
-.quote,
-.call-to-action,
-footer {
-  padding: 1rem;
-}
-
-header,
-.hero,
-footer {
-  background-color: var(--brand);
-  color: var(--shade);
-  font-size: 18px;
-}
-
+/* -- Header -- */
 header .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 header h1 {
@@ -87,16 +95,31 @@ header h1 {
   font-size: 24px;
 }
 
-header a {
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header a:not(:last-child) {
   margin-right: 1rem;
+}
+
+header a {
   text-decoration: none;
   color: var(--shade);
 }
 
+/* -- Hero -- */
 .hero .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.hero section {
+  flex: 1;
 }
 
 .hero h2 {
@@ -104,44 +127,41 @@ header a {
   font-size: 48px;
 }
 
-.hero section {
-  flex: 1;
-}
-
 .hero img {
-  flex: 1;
   border: 0.15rem solid var(--shade);
 }
 
+/* -- Gallery -- */
 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
   text-align: center;
 }
 
-.gallery-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-evenly;
+.gallery h2 {
+  flex-basis: 100%;
 }
 
-.gallery-item {
-  flex: 0 0 12rem;
+.gallery section {
+  flex-basis: 12rem;
 }
 
 .gallery img {
   border: 0.15rem solid var(--brand-light);
   border-radius: 0.5rem;
-  margin: 0 auto;
 }
 
+/* -- Quote -- */
 .quote {
   background-color: var(--shade);
   color: var(--brand-dark);
 }
 
 .quote .container {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media screen and (max-width: 64rem) {
@@ -151,26 +171,31 @@ header a {
   }
 }
 
-.quote .quote-body {
+/* Quote body */
+.quote p:first-child {
   font-size: 36px;
   font-weight: lighter;
   font-style: italic;
 }
-.quote .quote-author {
+
+/* Quote author */
+.quote p:last-child {
   text-align: end;
   font-weight: bold;
 }
 
+/* -- Call to action -- */
 .call-to-action {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 1rem 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
   background-color: var(--brand-light);
   color: var(--shade-light);
-  border-radius: 0.5rem;
 }
 
 .call-to-action section {
@@ -181,6 +206,7 @@ header a {
   border: 0.15rem solid var(--shade-light);
 }
 
+/* -- Footer -- */
 footer .container {
   text-align: center;
 }
